@@ -1,205 +1,98 @@
-/* Custom CSS Variables based on your logo and professional B2B style */
+/* Custom CSS Variables */
 :root {
     --color-primary: #333333; /* Dark text for readability */
     --color-secondary: #5a5a5a; /* Lighter text/subheadings */
-    --color-accent: #205079; /* YOUR BRAND COLOR: Deep Corporate Blue for CTAs/Highlight */
+    --color-accent: #205079; /* YOUR BRAND COLOR: Deep Corporate Blue */
+    --color-accent-hover: #1a4060; /* Darker shade for hover effect */
     --color-background-light: #ffffff; /* Clean white background */
     --color-background-dark: #f4f4f4; /* Light grey for section breaks */
     --color-logo-gray: #d3d3d3; /* Inspired by the logo background */
+    --color-price-tag: #cc4400; /* Distinct color for price/investment */
 
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Lato', sans-serif;
 }
-/* ... all other CSS remains the same, but now uses the updated --color-accent ... */
 
-/* Example of change applied to primary button */
+/* Global Styles */
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    background-color: var(--color-background-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--color-background-light);
+    border-bottom: 1px solid var(--color-logo-gray);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo-img {
+    height: 35px; /* Adjust as needed */
+    width: auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--color-accent);
+}
+
+.cta-link {
+    background-color: var(--color-accent);
+    color: #ffffff !important; /* Override secondary color */
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 30px !important;
+}
+
+.cta-link:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* Button Styling (General) */
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Primary CTA Button (Used frequently) */
 .primary-cta {
-    background-color: var(--color-accent); /* Will use #205079 */
+    background-color: var(--color-accent);
     color: white;
     font-size: 1.1em;
     margin-top: 20px;
 }
 
 .primary-cta:hover {
-    background-color: #1a4060; /* Slightly darker shade for hover effect */
-}
-/* --- Add these styles to your existing style.css file --- */
-
-/* Section Titles and Intros (Common on all content pages) */
-.page-hero-intro {
-    text-align: center;
-    padding: 80px 5%;
-    background-color: var(--color-background-dark); /* Light gray background */
+    background-color: var(--color-accent-hover);
 }
 
-.page-hero-intro h1 {
-    font-size: 2em;
-    color: var(--color-accent); /* Use your Navy Blue brand color */
-}
-
-.page-hero-intro h2 {
-    font-size: 1.2em;
-    color: var(--color-secondary);
-    max-width: 900px;
-    margin: 15px auto 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 10px;
-    margin-top: 40px;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: var(--color-secondary);
-    margin-bottom: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Methodology Grid Styling */
-.methodology-section {
-    padding: 60px 5%;
-}
-
-.methodology-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.phase-card {
-    padding: 25px;
-    border: 1px solid var(--color-logo-gray);
-    border-radius: 8px;
-    background-color: var(--color-background-light);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.phase-card h4 {
-    color: var(--color-accent);
-    margin-top: 0;
-}
-
-/* Engagement Options (Pricing) Grid Styling */
-.engagement-options-section {
-    background-color: var(--color-background-dark);
-    padding: 80px 5%;
-}
-
-.package-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.package-card {
-    background-color: var(--color-background-light);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.package-card h4 {
-    font-size: 1.5em;
-    color: var(--color-accent);
-    min-height: 70px; /* Ensure titles align if one wraps */
-}
-
-.investment-tag {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #cc4400; /* Use a distinct color like deep orange for price */
-    margin: 10px 0 20px;
-}
-
-.package-card ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin: 20px 0;
-}
-
-.package-card ul li {
-    padding: 8px 0;
-    border-bottom: 1px dashed var(--color-background-dark);
-}
-
-/* Next Step CTA (Reusable) */
-.next-step-cta {
-    text-align: center;
-    padding: 50px 5%;
-}
-
-.next-step-cta h3 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-/* --- Add these styles for the Case Studies Page --- */
-
-.case-study-grid-section {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.case-study-card {
-    background-color: var(--color-background-dark);
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: 200px 1fr; /* Space for the key stat and the content */
-    gap: 30px;
-    align-items: center;
-    border-left: 5px solid var(--color-accent); /* Brand-color emphasis */
-}
-
-.case-study-card h4 {
-    grid-column: 1 / -1; /* Title spans both columns */
-    font-size: 1.6em;
-    color: var(--color-primary);
-    margin-top: 0;
-}
-
-.key-stat {
-    text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: var(--color-background-light);
-    border: 1px solid var(--color-logo-gray);
-}
-
-.key-stat span {
-    display: block;
-    font-size: 3em;
-    font-weight: bold;
-    color: var(--color-accent); /* Big numbers in brand color */
-    line-height: 1;
-}
-
-.key-stat p {
-    font-size: 0.9em;
-    margin-top: 5px;
-    line-height: 1.3;
-}
-
-.details {
-    text-align: left;
-}
-
-.details strong {
-    color: var(--color-accent);
-}
-
+/* Secondary CTA Button (Used on Case Studies, About Page) */
 .secondary-cta {
     background-color: var(--color-secondary);
     color: white;
@@ -215,8 +108,7 @@
     background-color: #4a4a4a;
 }
 
-.closing-cta {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 30px;
-}
+/* --- Home Page Styles --- */
+
+/* Hero Section (Home Page) */
+.hero-section
