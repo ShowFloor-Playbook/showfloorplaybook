@@ -1,0 +1,178 @@
+/* Custom CSS Variables */
+:root {
+    --color-primary: #333333; /* Dark text for readability */
+    --color-secondary: #5a5a5a; /* Lighter text/subheadings */
+    --color-accent: #205079; /* YOUR BRAND COLOR: Deep Corporate Blue */
+    --color-accent-hover: #1a4060; /* Darker shade for hover effect */
+    --color-background-light: #ffffff; /* Clean white background */
+    --color-background-dark: #f4f4f4; /* Light grey for section breaks */
+    --color-logo-gray: #d3d3d3; 
+    --color-price-tag: #cc4400; 
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    background-color: var(--color-background-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+/* --- Navigation Bar (Dark Blue Background, Text Only) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--color-accent); /* Corporate Blue Background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+}
+
+.brand-text {
+    color: white; /* Title text is white */
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Nav links are white on blue background */
+.nav-links a {
+    text-decoration: none;
+    color: white; 
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--color-background-dark); 
+}
+
+/* CTA link is white button on blue background */
+.cta-link {
+    background-color: white; 
+    color: var(--color-accent) !important; 
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 30px !important;
+}
+
+.cta-link:hover {
+    background-color: var(--color-background-dark);
+}
+
+/* --- Buttons and Reusable Components --- */
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-cta {
+    background-color: var(--color-accent);
+    color: white;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+.primary-cta:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.secondary-cta {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    text-transform: none;
+    font-weight: normal;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+/* --- Home Page Styles (Solid Blue Hero) --- */
+
+.hero-section {
+    text-align: center;
+    padding: 100px 5%;
+    background-color: var(--color-accent); 
+    color: white; 
+}
+.hero-section h1, .hero-section h2 {
+    color: white; 
+}
+
+/* --- General Layout and Grids --- */
+
+.founder-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Image Placeholders (Ready for your photos) --- */
+.founder-photo-container {
+    max-width: 250px; 
+    width: 50%; 
+    height: 0; 
+    padding-bottom: 50%; 
+    position: relative; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    flex-shrink: 0; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 3px solid var(--color-accent);
+}
+
+.founder-photo {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Footer and Reusable Content Blocks --- */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: var(--color-primary);
+    color: var(--color-background-dark);
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .founder-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .founder-photo-container {
+        margin-bottom: 20px;
+        width: 60%; 
+        max-width: 250px; 
+    }
+    .nav-links {
+        display: none; 
+    }
+}
