@@ -23,3 +23,123 @@
 .primary-cta:hover {
     background-color: #1a4060; /* Slightly darker shade for hover effect */
 }
+/* --- Add these styles to your existing style.css file --- */
+
+/* Section Titles and Intros (Common on all content pages) */
+.page-hero-intro {
+    text-align: center;
+    padding: 80px 5%;
+    background-color: var(--color-background-dark); /* Light gray background */
+}
+
+.page-hero-intro h1 {
+    font-size: 2em;
+    color: var(--color-accent); /* Use your Navy Blue brand color */
+}
+
+.page-hero-intro h2 {
+    font-size: 1.2em;
+    color: var(--color-secondary);
+    max-width: 900px;
+    margin: 15px auto 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-secondary);
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Methodology Grid Styling */
+.methodology-section {
+    padding: 60px 5%;
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.phase-card {
+    padding: 25px;
+    border: 1px solid var(--color-logo-gray);
+    border-radius: 8px;
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.phase-card h4 {
+    color: var(--color-accent);
+    margin-top: 0;
+}
+
+/* Engagement Options (Pricing) Grid Styling */
+.engagement-options-section {
+    background-color: var(--color-background-dark);
+    padding: 80px 5%;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.package-card {
+    background-color: var(--color-background-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.package-card h4 {
+    font-size: 1.5em;
+    color: var(--color-accent);
+    min-height: 70px; /* Ensure titles align if one wraps */
+}
+
+.investment-tag {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #cc4400; /* Use a distinct color like deep orange for price */
+    margin: 10px 0 20px;
+}
+
+.package-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.package-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--color-background-dark);
+}
+
+/* Next Step CTA (Reusable) */
+.next-step-cta {
+    text-align: center;
+    padding: 50px 5%;
+}
+
+.next-step-cta h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
