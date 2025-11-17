@@ -42,7 +42,7 @@ h1, h2, h3, h4 {
 .logo-img {
     height: 35px; 
     width: auto;
-    filter: invert(100%); /* FIX: Makes white logo visible on dark background */
+    /* FILTER REMOVED: Logo must be naturally blue or white/light gray */
 }
 
 /* Nav links are white on blue background */
@@ -102,4 +102,141 @@ h1, h2, h3, h4 {
     text-transform: none;
     font-weight: normal;
     transition: background-color 0.3s;
-    margin-
+    margin-top: 15px;
+}
+
+.secondary-cta:hover {
+    background-color: #4a4a4a;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+/* --- Content Page Intro Styles (Reusable) --- */
+
+.page-hero-intro {
+    text-align: center;
+    padding: 80px 5%;
+    background-color: var(--color-background-dark);
+}
+
+.page-hero-intro h1 {
+    font-size: 2em;
+    color: var(--color-accent);
+}
+
+/* --- Home Page Styles (Solid Blue Hero) --- */
+
+.hero-section {
+    text-align: center;
+    padding: 100px 5%;
+    background-color: var(--color-accent); /* Solid Blue Background */
+    color: white; 
+}
+.hero-section h1, .hero-section h2 {
+    color: white; 
+}
+
+/* General Content Sections */
+.problem-solution-section,
+.process-teaser-section,
+.methodology-section,
+.engagement-options-section,
+.case-study-grid-section,
+.founder-section,
+.contact-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Process Teaser Grid (Home Page) */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 40px 0;
+    text-align: left;
+}
+
+/* --- About Page Styles (Image Fixes) --- */
+
+.founder-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* FIX: Responsive Circular Profile Photo Container */
+.founder-photo-container {
+    max-width: 250px; 
+    width: 50%; 
+    height: 0; 
+    padding-bottom: 50%; 
+    position: relative; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    flex-shrink: 0; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 3px solid var(--color-accent);
+}
+
+.founder-photo {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Contact Page Styles --- */
+.direct-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-method.full-width {
+    grid-column: 1 / -1; 
+}
+
+/* --- Footer & Final Reusable Styles --- */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: var(--color-primary);
+    color: var(--color-background-dark);
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .founder-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .founder-photo-container {
+        margin-bottom: 20px;
+        width: 60%; 
+        max-width: 250px; 
+    }
+    .process-grid, .methodology-grid, .direct-contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none; 
+    }
+}
