@@ -42,7 +42,7 @@ h1, h2, h3, h4 {
 .logo-img {
     height: 35px; 
     width: auto;
-    /* FILTER REMOVED: Logo must be naturally blue or white/light gray */
+    filter: invert(100%); /* FIX: Makes white logo visible on dark background */
 }
 
 /* Nav links are white on blue background */
@@ -154,6 +154,13 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
+.problem-solution-section h3 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.8em;
+    color: var(--color-accent);
+}
+
 /* Process Teaser Grid (Home Page) */
 .process-grid {
     display: grid;
@@ -161,6 +168,61 @@ h1, h2, h3, h4 {
     gap: 30px;
     margin: 40px 0;
     text-align: left;
+}
+.process-step h4 {
+    color: var(--color-accent);
+    font-size: 1.2em;
+}
+
+/* --- Services Page Styles --- */
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.engagement-options-section {
+    background-color: var(--color-background-dark);
+    padding: 80px 5%;
+}
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.package-card {
+    background-color: var(--color-background-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.package-card h4 {
+    color: var(--color-accent);
+}
+
+/* --- Case Studies Page Styles --- */
+.case-study-card {
+    background-color: var(--color-background-dark);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
+    align-items: center;
+    border-left: 5px solid var(--color-accent);
+}
+.key-stat span {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--color-accent);
+    line-height: 1;
 }
 
 /* --- About Page Styles (Image Fixes) --- */
@@ -195,6 +257,10 @@ h1, h2, h3, h4 {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.founder-bio h3 {
+    color: var(--color-accent);
 }
 
 /* --- Contact Page Styles --- */
