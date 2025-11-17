@@ -29,18 +29,15 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
-/* Navigation Bar - UPDATED FOR CONTRAST */
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    
-    /* Set background to brand color so white logo appears */
-    background-color: var(--color-accent); 
-    
+    background-color: var(--color-background-light);
     border-bottom: 1px solid var(--color-logo-gray);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .logo-img {
@@ -48,37 +45,29 @@ h1, h2, h3, h4 {
     width: auto;
 }
 
-/* Inverse Logo Class for white logo on dark background */
-.logo-inverse {
-    filter: invert(100%) hue-rotate(180deg); 
-}
-
-/* Nav links are white on blue background */
 .nav-links a {
     text-decoration: none;
-    color: white; 
+    color: var(--color-secondary);
     margin-left: 25px;
     font-weight: 600;
     transition: color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--color-background-dark); 
+    color: var(--color-accent);
 }
 
-/* CTA link is inverted (white button on blue background) */
 .cta-link {
-    background-color: white; 
-    color: var(--color-accent) !important; 
+    background-color: var(--color-accent);
+    color: #ffffff !important; /* Override secondary color */
     padding: 8px 15px;
     border-radius: 5px;
     margin-left: 30px !important;
 }
 
 .cta-link:hover {
-    background-color: var(--color-background-dark);
+    background-color: var(--color-accent-hover);
 }
-
 
 /* Button Styling (General) */
 .button {
@@ -88,4 +77,169 @@ h1, h2, h3, h4 {
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s, color 0.3
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Primary CTA Button (Used frequently) */
+.primary-cta {
+    background-color: var(--color-accent);
+    color: white;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.primary-cta:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* Secondary CTA Button (Used on Case Studies, About Page) */
+.secondary-cta {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    text-transform: none;
+    font-weight: normal;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.secondary-cta:hover {
+    background-color: #4a4a4a;
+}
+
+/* --- Content Page Intro Styles (Reusable) --- */
+
+.page-hero-intro {
+    text-align: center;
+    padding: 80px 5%;
+    background-color: var(--color-background-dark);
+}
+
+.page-hero-intro h1 {
+    font-size: 2em;
+    color: var(--color-accent);
+}
+
+.page-hero-intro h2 {
+    font-size: 1.2em;
+    color: var(--color-secondary);
+    max-width: 900px;
+    margin: 15px auto 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-secondary);
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Home Page Styles --- */
+
+/* Hero Section (Home Page) */
+.hero-section {
+    text-align: center;
+    padding: 100px 5%;
+    
+    /* Set the solid background to your Corporate Blue */
+    background-color: var(--color-accent); 
+    
+    /* Ensure the text is white for high readability */
+    color: white; 
+}
+
+/* Ensure headings and subheadings are explicitly white */
+.hero-section h1,
+.hero-section h2 {
+    color: white; 
+}
+
+/* General Content Sections */
+.problem-solution-section,
+.process-teaser-section,
+.methodology-section,
+.engagement-options-section,
+.case-study-grid-section,
+.founder-section,
+.contact-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.problem-solution-section h3 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.8em;
+    color: var(--color-accent);
+}
+
+.problem-solution-section p {
+    text-align: center;
+    max-width: 700px;
+    margin: 15px auto 50px;
+}
+
+/* Process Teaser Grid (Home Page) */
+.process-teaser-section {
+    text-align: center;
+    background-color: var(--color-background-light);
+    max-width: 1000px;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 40px 0;
+    text-align: left;
+}
+
+.process-step {
+    border: 1px solid var(--color-background-dark);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.process-step h4 {
+    color: var(--color-accent);
+    font-size: 1.2em;
+}
+
+/* --- Services Page Styles --- */
+
+/* Methodology Grid Styling (Services Page) */
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.phase-card {
+    padding: 25px;
+    border: 1px solid var(--color-logo-gray);
+    border-radius: 8px;
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.phase-card h4 {
+    color:
