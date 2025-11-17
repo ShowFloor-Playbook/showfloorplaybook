@@ -45,6 +45,18 @@ h1, h2, h3, h4 {
     width: auto;
 }
 
+.logo-img {
+    height: 35px; /* Adjust as needed */
+    width: auto;
+}
+
+/* --- INVERSE LOGO CLASS --- */
+.logo-inverse {
+    /* This reverses the light/dark tones of the image, making white look dark */
+    filter: invert(100%) hue-rotate(180deg); 
+}
+/* End of new code */
+
 .nav-links a {
     text-decoration: none;
     color: var(--color-secondary);
