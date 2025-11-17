@@ -6,12 +6,13 @@
     --color-accent-hover: #1a4060; /* Darker shade for hover effect */
     --color-background-light: #ffffff; 
     --color-background-dark: #f4f4f4; 
+    --color-logo-gray: #d3d3d3; 
     --color-price-tag: #cc4400; 
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Lato', sans-serif;
 }
 
-/* Global Centering, Reset, and Typography */
+/* Global Styles */
 body {
     font-family: var(--font-body);
     color: var(--color-primary);
@@ -26,14 +27,14 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
-/* --- Global Content Centering (FIX for content alignment) --- */
+/* --- Global Content Centering --- */
 .content-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 5%; /* Vertical spacing and horizontal padding */
+    padding: 60px 5%; 
 }
 
-/* --- Navigation Bar (Dark Blue Background) --- */
+/* --- Navigation Bar (Text Title) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -42,20 +43,32 @@ h1, h2, h3, h4 {
     background-color: var(--color-accent); 
     box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
 }
-.logo-img {
-    height: 35px; 
-    width: auto;
-    filter: invert(100%); /* FIX: Requires white logo file (e.g., logo.png) */
+
+/* Style for the text title replacing the logo */
+.brand-text {
+    color: white; 
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: none;
 }
+
 .nav-links a {
     text-decoration: none;
     color: white; 
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
 }
+.nav-links a:hover {
+    color: var(--color-background-dark);
+}
+
 .cta-link {
     background-color: white; 
     color: var(--color-accent) !important; 
     padding: 8px 15px;
     border-radius: 5px;
+    margin-left: 30px !important;
 }
 
 /* --- Hero Section (Solid Blue) --- */
@@ -85,52 +98,10 @@ h1, h2, h3, h4 {
     gap: 30px;
 }
 
-/* --- Founder Image & Bio (FIX for responsiveness) --- */
+/* --- Founder Image & Bio --- */
 .founder-content {
     display: flex;
     gap: 40px;
     align-items: flex-start;
 }
 .founder-photo-container {
-    max-width: 250px; 
-    width: 50%; 
-    height: 0; 
-    padding-bottom: 50%; 
-    position: relative; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    flex-shrink: 0; 
-    border: 3px solid var(--color-accent);
-}
-.founder-photo {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 20px 5%;
-    background-color: var(--color-primary);
-    color: var(--color-background-dark);
-}
-
-/* --- Responsive Adjustments (Mobile) --- */
-@media (max-width: 768px) {
-    .package-grid, .direct-contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .founder-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .founder-photo-container {
-        width: 60%; 
-        max-width: 250px; 
-    }
-}
