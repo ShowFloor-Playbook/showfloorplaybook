@@ -1,14 +1,13 @@
 /* Custom CSS Variables */
 :root {
-    --color-primary: #333333; /* Dark text for readability */
-    --color-secondary: #5a5a5a; /* Lighter text/subheadings */
+    --color-primary: #333333; 
+    --color-secondary: #5a5a5a; 
     --color-accent: #205079; /* YOUR BRAND COLOR: Deep Corporate Blue */
-    --color-accent-hover: #1a4060; /* Darker shade for hover effect */
-    --color-background-light: #ffffff; /* Clean white background */
-    --color-background-dark: #f4f4f4; /* Light grey for section breaks */
+    --color-accent-hover: #1a4060; 
+    --color-background-light: #ffffff; 
+    --color-background-dark: #f4f4f4; 
     --color-logo-gray: #d3d3d3; 
     --color-price-tag: #cc4400; 
-
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Lato', sans-serif;
 }
@@ -41,16 +40,23 @@ h1, h2, h3, h4 {
 .logo-img {
     height: 35px; 
     width: auto;
-    filter: invert(100%); /* FIX: Makes white logo visible on blue background */
+    filter: invert(100%); /* FIX: Requires white logo file to be uploaded */
 }
 
-/* Nav links are white on blue background */
 .nav-links a {
     text-decoration: none;
     color: white; 
     margin-left: 25px;
     font-weight: 600;
     transition: color 0.3s;
+}
+
+.cta-link {
+    background-color: white; 
+    color: var(--color-accent) !important; 
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 30px !important;
 }
 
 /* --- Home Page Styles (Solid Blue Hero) --- */
@@ -64,12 +70,10 @@ h1, h2, h3, h4 {
     color: white; 
 }
 
-/* --- General Layout and Grids --- */
-.founder-content {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    max-width: 1000px;
+/* --- Reusable Content Wrappers (Centering Fix) --- */
+/* We will apply this to the main content sections for stability */
+.content-section {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 60px 5%;
 }
@@ -98,19 +102,42 @@ h1, h2, h3, h4 {
     display: block;
 }
 
+/* --- Standard Grids/Elements --- */
+.package-grid, .process-grid, .direct-contact-grid {
+    display: grid;
+    gap: 30px;
+    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr); /* Default grid layout */
+}
+.direct-contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+}
+.contact-method.full-width {
+    grid-column: 1 / -1; 
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: var(--color-primary);
+    color: var(--color-background-dark);
+}
+
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
+    .package-grid, .process-grid, .direct-contact-grid {
+        grid-template-columns: 1fr;
+    }
     .founder-content {
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
     .founder-photo-container {
-        margin-bottom: 20px;
         width: 60%; 
-        max-width: 250px; 
     }
-    /* Rest of the responsive CSS needed for layout stability goes here */
+    .nav-links {
+        display: none; 
+    }
 }
-
-/* --- (Add all other CSS definitions from previous steps below this point) --- */
