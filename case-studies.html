@@ -1,77 +1,100 @@
-/* --- Add these styles for the Case Studies Page --- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Case Studies | ShowFloor Playbook™</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.case-study-grid-section {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="ShowFloor Playbook Logo" class="logo-img">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="case-studies.html" class="active">Case Studies</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="cta-link">Contact</a>
+        </nav>
+    </header>
 
-.case-study-card {
-    background-color: var(--color-background-dark);
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: 200px 1fr; /* Space for the key stat and the content */
-    gap: 30px;
-    align-items: center;
-    border-left: 5px solid var(--color-accent); /* Brand-color emphasis */
-}
+    <main>
+        <section class="page-hero-intro">
+            <h1>Measurable Results That Transform Pipeline</h1>
+            <h2>We don't deal in theory. We deal in repeatable, systemized execution built on two decades of proven B2B sales methodologies. See how the ShowFloor Playbook™ delivers visible ROI.</h2>
+            <p>Developed by John McKenna, with 22 years in B2B event sponsorship and over 120 trade shows walked.</p>
+        </section>
 
-.case-study-card h4 {
-    grid-column: 1 / -1; /* Title spans both columns */
-    font-size: 1.6em;
-    color: var(--color-primary);
-    margin-top: 0;
-}
+        <section class="case-study-grid-section">
+            <h3 class="section-title">Success Stories: Problem, Playbook, and Payoff</h3>
+            
+            <div class="case-study-card">
+                <div class="key-stat">
+                    <span>+35%</span>
+                    <p>Increase in "SQL to Closed-Won" conversion rate.</p>
+                </div>
+                <h4>Case Study 1: Systemizing a Global Tech Sales Team</h4>
+                
+                <div class="details">
+                    <p><strong>The Challenge:</strong> A large, decentralized B2B tech sales organization was attending key industry shows but saw 70% of collected leads fail to move past the MQL stage. Their primary issue was inconsistent data capture and a lack of standardized qualification scripting on the show floor.</p>
+                    
+                    <p><strong>The Playbook Solution:</strong> We engaged with the **Custom ShowFloor Blueprint** package, auditing their existing mobile CRM use and developing five concise, mandatory conversation frameworks linked directly to qualification fields. We provided on-site training to regional sales leaders to enforce system adherence.</p>
+                    
+                    <p><strong>The Payoff:</strong> Within two major events, the team reported an unprecedented **35% increase in the SQL-to-Closed-Won conversion rate** of trade show leads, establishing the event team as a primary, measurable revenue driver.</p>
+                </div>
+                <a href="contact.html" class="button secondary-cta">Discuss a Similar Strategy</a>
+            </div>
 
-.key-stat {
-    text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: var(--color-background-light);
-    border: 1px solid var(--color-logo-gray);
-}
+            <div class="case-study-card">
+                <div class="key-stat">
+                    <span>40 Hours</span>
+                    <p>Time saved per rep in manual post-show data cleanup.</p>
+                </div>
+                <h4>Case Study 2: Efficiency in Life Sciences Lead Follow-up</h4>
+                
+                <div class="details">
+                    <p><strong>The Challenge:</strong> A growing Life Sciences firm was drowning in paper notes and unstructured CRM data post-show. Sales reps were spending two full weeks after each event on manual data entry and "chasing ghosts," leading to burnout and slow follow-up times.</p>
+                    
+                    <p><strong>The Playbook Solution:</strong> Through the **Booth-to-Booth Foundations Workshop**, we implemented a streamlined mobile capture tool integrated with AI summarization features. This eliminated manual entry and established a 'Next Action' trigger directly upon exiting a booth, standardizing the follow-up timeline.</p>
+                    
+                    <p><strong>The Payoff:</strong> The average time spent on post-show data cleanup and lead qualification was reduced by over **40 hours per rep per show**, resulting in the fastest recorded lead-to-opportunity conversion time for the company.</p>
+                </div>
+                <a href="contact.html" class="button secondary-cta">Discuss a Similar Strategy</a>
+            </div>
 
-.key-stat span {
-    display: block;
-    font-size: 3em;
-    font-weight: bold;
-    color: var(--color-accent); /* Big numbers in brand color */
-    line-height: 1;
-}
+            <div class="case-study-card">
+                <div class="key-stat">
+                    <span>100%</span>
+                    <p>Adherence to pre-show planning and post-show follow-up metrics.</p>
+                </div>
+                <h4>Case Study 3: Establishing Leadership Accountability</h4>
+                
+                <div class="details">
+                    <p><strong>The Challenge:</strong> A national B2B services provider struggled with sales leadership being unable to track show-floor performance or ensure reps were hitting target booths. The ROI was "invisible," creating friction between Sales and Marketing.</p>
+                    
+                    <p><strong>The Playbook Solution:</strong> Utilizing the **Leadership Partner Program**, we instituted real-time location-based tracking (for internal review only), live coaching, and mandatory goal alignment in Phase 1. This created a transparent feedback loop for sales managers, tied directly to performance reviews.</p>
+                    
+                    <p><strong>The Payoff:</strong> The company achieved **100% adherence** to the established planning and follow-up metrics, building a culture of accountability that transformed the trade show strategy from an event cost center into a reliable, measurable growth channel.</p>
+                </div>
+                <a href="contact.html" class="button secondary-cta">Discuss a Similar Strategy</a>
+            </div>
+            
+            <div class="closing-cta">
+                <p>Ready to write your own success story? Book a consultation now to explore a tailored Playbook for your next event.</p>
+                <a href="contact.html" class="button primary-cta">Schedule Your Strategy Session</a>
+            </div>
+        </section>
+    </main>
 
-.key-stat p {
-    font-size: 0.9em;
-    margin-top: 5px;
-    line-height: 1.3;
-}
+    <footer>
+        <p>&copy; 2025 ShowFloor Playbook™. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="contact.html">Contact</a> | <a href="https://linkedin.com/company/showfloorplaybook">LinkedIn</a>
+        </div>
+    </footer>
 
-.details {
-    text-align: left;
-}
-
-.details strong {
-    color: var(--color-accent);
-}
-
-.secondary-cta {
-    background-color: var(--color-secondary);
-    color: white;
-    padding: 10px 20px;
-    font-size: 0.9em;
-    text-transform: none;
-    font-weight: normal;
-    transition: background-color 0.3s;
-    margin-top: 15px;
-}
-
-.secondary-cta:hover {
-    background-color: #4a4a4a;
-}
-
-.closing-cta {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 30px;
-}
+</body>
+</html>
