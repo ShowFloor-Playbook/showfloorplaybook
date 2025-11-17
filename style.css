@@ -150,20 +150,18 @@ h1, h2, h3, h4 {
 .hero-section {
     text-align: center;
     padding: 100px 5%;
-    background-color: var(--color-background-dark);
+    
+    /* Set the solid background to your Corporate Blue */
+    background-color: var(--color-accent); 
+    
+    /* Ensure the text is white for high readability */
+    color: white; 
 }
 
-.hero-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
+/* Ensure headings and subheadings are explicitly white */
+.hero-section h1,
 .hero-section h2 {
-    font-size: 1.4em;
-    color: var(--color-secondary);
-    font-weight: 400;
-    max-width: 800px;
-    margin: 0 auto 30px;
+    color: white; 
 }
 
 /* General Content Sections */
