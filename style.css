@@ -1,48 +1,25 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
-    color: #1f1f1f;
-}
+/* Custom CSS Variables based on your logo and professional B2B style */
+:root {
+    --color-primary: #333333; /* Dark text for readability */
+    --color-secondary: #5a5a5a; /* Lighter text/subheadings */
+    --color-accent: #205079; /* YOUR BRAND COLOR: Deep Corporate Blue for CTAs/Highlight */
+    --color-background-light: #ffffff; /* Clean white background */
+    --color-background-dark: #f4f4f4; /* Light grey for section breaks */
+    --color-logo-gray: #d3d3d3; /* Inspired by the logo background */
 
-header {
-    background-color: #205079;
-    padding: 20px;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+/* ... all other CSS remains the same, but now uses the updated --color-accent ... */
+
+/* Example of change applied to primary button */
+.primary-cta {
+    background-color: var(--color-accent); /* Will use #205079 */
     color: white;
+    font-size: 1.1em;
+    margin-top: 20px;
 }
 
-nav {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    opacity: 0.8;
-}
-
-.hero {
-    padding: 80px 20px;
-    text-align: center;
-    background: #f5f5f5;
-}
-
-section {
-    padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-footer {
-    background-color: #205079;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 50px;
+.primary-cta:hover {
+    background-color: #1a4060; /* Slightly darker shade for hover effect */
 }
