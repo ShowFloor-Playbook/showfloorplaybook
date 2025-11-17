@@ -143,3 +143,80 @@
     font-size: 1.8em;
     margin-bottom: 20px;
 }
+/* --- Add these styles for the Case Studies Page --- */
+
+.case-study-grid-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.case-study-card {
+    background-color: var(--color-background-dark);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr; /* Space for the key stat and the content */
+    gap: 30px;
+    align-items: center;
+    border-left: 5px solid var(--color-accent); /* Brand-color emphasis */
+}
+
+.case-study-card h4 {
+    grid-column: 1 / -1; /* Title spans both columns */
+    font-size: 1.6em;
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+.key-stat {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-logo-gray);
+}
+
+.key-stat span {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--color-accent); /* Big numbers in brand color */
+    line-height: 1;
+}
+
+.key-stat p {
+    font-size: 0.9em;
+    margin-top: 5px;
+    line-height: 1.3;
+}
+
+.details {
+    text-align: left;
+}
+
+.details strong {
+    color: var(--color-accent);
+}
+
+.secondary-cta {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    text-transform: none;
+    font-weight: normal;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.secondary-cta:hover {
+    background-color: #4a4a4a;
+}
+
+.closing-cta {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
