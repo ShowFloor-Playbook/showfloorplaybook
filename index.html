@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowFloor Playbook™ - B2B Trade Show Sales Methodology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #205079;
+            --primary-dark: #163d5a;
+            --primary-light: #2a6a9f;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --gray-border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-image {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Content Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--text-light);
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Table */
+        .phases-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .phases-table th,
+        .phases-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .phases-table th {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .phases-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .phases-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-card .investment {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        .founder-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Form */
+        .contact-content {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--gray-border);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button[type="submit"] {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background: var(--primary-dark);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gray-border);
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin: 0 1rem;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .case-study h3 {
+            margin-top: 0;
+        }
+
+        .case-study-meta {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo img {
+                height: 45px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo" onclick="showPage('home'); return false;">
+                <img id="logoImg" alt="ShowFloor Playbook">
+            </a>
+            <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home'); return false;" class="active">Home</a></li>
+                <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+                <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+                <li><a href="#" onclick="showPage('case-studies'); return false;">Case Studies</a></li>
+                <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="page-home" class="page">
+        <div class="hero">
+            <div class="container">
+                <h1>ShowFloor Playbook™</h1>
+                <p class="subtitle">The Complete B2B Booth-to-Booth Sales Methodology</p>
+                <p>Turn trade show chaos into systematic revenue growth</p>
+                <img id="heroImg" class="hero-image" alt="Trade Show Floor">
+                <a href="#" class="cta-button" onclick="showPage('contact'); return false;">Schedule Your Consultation</a>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <h2>Who It's For</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Tech & Life Sciences Companies</h4>
+                        <p>Sales teams attending trade shows who need a competitive edge and measurable results.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Sales Leaders</h4>
+                        <p>Looking to systematize floor strategy and maximize conversions across their entire team.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Sales Representatives</h4>
+                        <p>Who need confidence and structure in booth-to-booth interactions to close more deals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>The Challenge</h2>
+                <p class="intro-text">Too often, sales teams walk trade shows without a structured approach, leading to missed opportunities and invisible ROI.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Uncoordinated Visits</h4>
+                        <p>Prospect visits lack planning and strategic prioritization</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Lost Information</h4>
+                        <p>Notes are scattered or never captured in CRM systems</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Inconsistent Follow-up</h4>
+                        <p>Leads fall through the cracks without systematic processes</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Wasted Insights</h4>
+                        <p>Valuable floor intelligence is never leveraged or shared</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>The Solution: ShowFloor Playbook™</h2>
+                <p class="intro-text">A repeatable, end-to-end system for pre-show planning, booth-to-booth execution, and post-show conversion. Built on decades of hands-on experience.</p>
+                
+                <h3>Four-Phase Methodology</h3>
+                <table class="phases-table">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Focus</th>
+                            <th>Outcome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Plan</strong></td>
+                            <td>Identify key prospects, prioritize visits, prep CRM workflows</td>
+                            <td>A targeted, actionable booth-to-booth plan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Execute</strong></td>
+                            <td>Guide reps on floor navigation, conversation frameworks, and real-time data capture</td>
+                            <td>Confident, effective floor engagement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Convert</strong></td>
+                            <td>Post-show AI summaries, task creation, and follow-up automation</td>
+                            <td>Leads converted into measurable pipeline</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Review</strong></td>
+                            <td>Analyze performance, share best practices, and optimize future shows</td>
+                            <td>Continuous improvement for sales teams</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Why This Works</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>22 Years of Experience</h4>
+                        <p>Built from real-world expertise across 120+ trade shows in B2B advertising and event sponsorship sales</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Industry-Specific</h4>
+                        <p>Designed specifically for technical and life sciences teams navigating complex show floors</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Measurable Results</h4>
+                        <p>Ensures consistent lead capture, follow-up, and trackable pipeline growth</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="page-about" class="page hidden">
+        <div class="hero">
+            <div class="container">
+                <h1>About ShowFloor Playbook™</h1>
+                <p class="subtitle">Experience-Driven Sales Methodology</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="about-content">
+                    <div>
+                        <img id="founderImg" class="founder-image" alt="John McKenna">
+                    </div>
+                    <div>
+                        <h2>Meet John McKenna</h2>
+                        <h3>Sales Enablement Consultant</h3>
+                        <p>With 22 years of experience in B2B advertising and event sponsorship sales, John McKenna has walked over 120 trade shows, learning what works and what doesn't when it comes to booth-to-booth selling.</p>
+                        
+                        <p>ShowFloor Playbook™ isn't theory—it's a battle-tested methodology born from thousands of real conversations, hundreds of successful deals, and decades of refining the art and science of trade show sales.</p>
+
+                        <h3>The Mission</h3>
+                        <p>To help tech and life sciences sales teams stop wasting money on trade shows and start turning them into predictable revenue engines. Every show should generate measurable pipeline—and with the right system, it will.</p>
+
+                        <h3>Why It Matters</h3>
+                        <p>Trade shows represent massive investments for B2B companies, yet most teams lack a structured approach to maximize ROI. ShowFloor Playbook™ changes that by bringing discipline, repeatability, and proven best practices to every show floor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="page-services" class="page hidden">
+        <div class="hero">
+            <div class="container">
+                <h1>Services</h1>
+                <p class="subtitle">How We Work Together</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <h2>Choose Your Engagement Level</h2>
+                <p class="intro-text">From foundational workshops to comprehensive leadership partnerships, we have a solution that fits your needs and budget.</p>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>⚙️ Workshop: Booth-to-Booth Foundations</h3>
+                        <div class="investment">Investment: $3,000</div>
+                        <p><strong>Format:</strong> 3-hour virtual or in-person session</p>
+                        <p><strong>What's Included:</strong></p>
+                        <ul>
+                            <li>Pre-show planning strategies and best practices</li>
+                            <li>Floor navigation and booth-to-booth conversation frameworks</li>
+                            <li>CRM workflows for lead capture and follow-up</li>
+                            <li>Actionable takeaways your team can implement immediately</li>
+                        </ul>
+                        <p><strong>Best For:</strong> Teams attending 1-2 shows per year who want to establish foundational processes</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>🚀 Custom ShowFloor Blueprint</h3>
+                        <div class="investment">Investment: $6,000–$10,000</div>
+                        <p><strong>What's Included:</strong></p>
+                        <ul>
+                            <li>Comprehensive process audit of your current trade show approach</li>
+                            <li>Custom CRM integration and workflow design</li>
+                            <li>Team coaching sessions (virtual or in-person)</li>
+                            <li>Post-show workflows including AI summaries and task automation</li>
+                            <li>Performance analysis and optimization recommendations</li>
+                        </ul>
+                        <p><strong>Best For:</strong> Sales teams attending 3-5 shows per year who want a customized, repeatable system</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>🧭 Leadership Partner Program</h3>
+                        <div class="investment">Investment: $15,000+</div>
+                        <p><strong>What's Included:</strong></p>
+                        <ul>
+                            <li>End-to-end guidance across multiple trade shows throughout the year</li>
+                            <li>Live coaching and floor support during events</li>
+                            <li>Real-time strategy adjustments based on floor dynamics</li>
+                            <li>Comprehensive post-event analytics and pipeline tracking</li>
+                            <li>Quarterly review sessions and continuous optimization</li>
+                            <li>Dedicated support for sales leadership</li>
+                        </ul>
+                        <p><strong>Best For:</strong> Organizations with ambitious trade show programs (5+ shows annually) seeking a strategic partner for maximum ROI</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#" class="cta-button" onclick="showPage('contact'); return false;">Schedule a Consultation</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CASE STUDIES PAGE -->
+    <div id="page-case-studies" class="page hidden">
+        <div class="hero">
+            <div class="container">
+                <h1>Case Studies</h1>
+                <p class="subtitle">Real Results from Real Trade Shows</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <h2>Success Stories</h2>
+                <p class="intro-text">See how companies have transformed their trade show performance with ShowFloor Playbook™</p>
+
+                <div class="case-study">
+                    <h3>Tech Startup Increases Qualified Leads by 300%</h3>
+                    <p class="case-study-meta">SaaS Company | 50 Employees | 3 Trade Shows</p>
+                    <p><strong>The Challenge:</strong> A fast-growing SaaS company was attending major industry conferences but struggled with lead quality and follow-up. Their reps felt overwhelmed on the show floor and weren't capturing critical information in their CRM.</p>
+                    <p><strong>The Solution:</strong> Implemented the Custom ShowFloor Blueprint including pre-show targeting, conversation frameworks, and automated post-show workflows.</p>
+                    <p><strong>The Results:</strong></p>
+                    <ul>
+                        <li>300% increase in qualified leads captured</li>
+                        <li>95% CRM data capture rate (up from 40%)</li>
+                        <li>Follow-up time reduced from 2 weeks to 48 hours</li>
+                        <li>$1.2M in pipeline generated from three shows</li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h3>Life Sciences Firm Systematizes Multi-Show Strategy</h3>
+                    <p class="case-study-meta">Medical Devices | 200 Employees | 8 Trade Shows Annually</p>
+                    <p><strong>The Challenge:</strong> A medical device manufacturer attended 8 major shows per year but lacked consistency across events. Different regional teams used different approaches, making it impossible to compare performance or share best practices.</p>
+                    <p><strong>The Solution:</strong> Enrolled in the Leadership Partner Program with quarterly reviews, live event coaching, and standardized processes across all shows.</p>
+                    <p><strong>The Results:</strong></p>
+                    <ul>
+                        <li>Unified methodology across all regional teams</li>
+                        <li>60% improvement in rep confidence and performance</li>
+                        <li>Show-over-show improvements in lead quality and conversion</li>
+                        <li>Clear ROI tracking enabling better budget allocation</li>
+                        <li>Best practices documentation reducing new rep onboarding time</li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h3>Workshop Transforms Sales Team's Trade Show Approach</h3>
+                    <p class="case-study-meta">B2B Software | 30 Employees | First Major Trade Show</p>
+                    <p><strong>The Challenge:</strong> A growing B2B software company was preparing for their first major industry conference. The team had never done booth-to-booth selling and needed to quickly get up to speed.</p>
+                    <p><strong>The Solution:</strong> Started with the Booth-to-Booth Foundations Workshop to establish core processes and build team confidence.</p>
+                    <p><strong>The Results:</strong></p>
+                    <ul>
+                        <li>Entire team trained and aligned in just 3 hours</li>
+                        <li>Clear pre-show plan with prioritized target list</li>
+                        <li>85 meaningful conversations over 3 days</li>
+                        <li>42 qualified opportunities entered into pipeline</li>
+                        <li>Team requested ongoing partnership for future shows</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--bg-light); border-radius: 8px;">
+                    <h3>Ready to Write Your Success Story?</h3>
+                    <p>Every successful trade show starts with a conversation.</p>
+                    <a href="#" class="cta-button" onclick="showPage('contact'); return false;">Get Started Today</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="page-contact" class="page hidden">
+        <div class="hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p class="subtitle">Let's Transform Your Trade Show Performance</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <h2>Schedule Your 20-Minute Consultation</h2>
+                <p class="intro-text">Ready to implement ShowFloor Playbook™ at your next trade show? Let's discuss how we can help your team maximize ROI and turn every show into a revenue opportunity.</p>
+
+                <div class="contact-content">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="shows">How many trade shows do you attend annually?</label>
+                            <input type="text" id="shows" name="shows">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your trade show goals and challenges *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+
+                    <div class="contact-info">
+                        <p><strong>Prefer to reach out directly?</strong></p>
+                        <p>
+                            <a href="mailto:john@showfloorplaybook.com">📧 john@showfloorplaybook.com</a>
+                        </p>
+                        <p>
+                            <a href="http://www.showfloorplaybook.com" target="_blank">🌐 www.showfloorplaybook.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShowFloor Playbook™. All rights reserved.</p>
+            <p>Helping B2B sales teams turn trade shows into revenue engines.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set image sources (images should be in same folder as index.html)
+        document.getElementById('logoImg').src = 'logo.png';
+        document.getElementById('heroImg').src = 'hero.jpg';
+        document.getElementById('founderImg').src = 'founder.jpg';
+
+        function showPage(pageName) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            document.getElementById(`page-${pageName}`).classList.remove('hidden');
+            
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+            
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your interest! In a production environment, this form would send your information to john@showfloorplaybook.com. For now, please email directly at john@showfloorplaybook.com');
+            event.target.reset();
+        }
