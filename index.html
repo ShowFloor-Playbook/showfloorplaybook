@@ -420,7 +420,7 @@
     <nav>
         <div class="container">
             <a href="#" class="logo" onclick="showPage('home'); return false;">
-                <img id="logoImg" alt="ShowFloor Playbook">
+                <img id="logoImg" src="logo.png" alt="ShowFloor Playbook">
             </a>
             <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
@@ -440,7 +440,7 @@
                 <h1>ShowFloor Playbook™</h1>
                 <p class="subtitle">The Complete B2B Booth-to-Booth Sales Methodology</p>
                 <p>Turn trade show chaos into systematic revenue growth</p>
-                <img id="heroImg" class="hero-image" alt="Trade Show Floor">
+                <img id="heroImg" src="hero.jpg" class="hero-image" alt="Trade Show Floor">
                 <a href="#" class="cta-button" onclick="showPage('contact'); return false;">Schedule Your Consultation</a>
             </div>
         </div>
@@ -564,7 +564,7 @@
             <div class="container">
                 <div class="about-content">
                     <div>
-                        <img id="founderImg" class="founder-image" alt="John McKenna">
+                        <img id="founderImg" src="founder.jpg" class="founder-image" alt="John McKenna">
                     </div>
                     <div>
                         <h2>Meet John McKenna</h2>
@@ -788,13 +788,6 @@
     </footer>
 
     <script>
-        // Set image sources when DOM is ready
-        window.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('logoImg').src = 'logo.png';
-            document.getElementById('heroImg').src = 'hero.jpg';
-            document.getElementById('founderImg').src = 'founder.jpg';
-        });
-
         function showPage(pageName) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.add('hidden'));
@@ -821,3 +814,6 @@
             alert('Thank you for your interest! In a production environment, this form would send your information to john@showfloorplaybook.com. For now, please email directly at john@showfloorplaybook.com');
             event.target.reset();
         }
+    </script>
+</body>
+</html>
