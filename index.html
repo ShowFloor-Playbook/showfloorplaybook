@@ -788,10 +788,12 @@
     </footer>
 
     <script>
-        // Set image sources (images should be in same folder as index.html)
-        document.getElementById('logoImg').src = 'logo.png';
-        document.getElementById('heroImg').src = 'hero.jpg';
-        document.getElementById('founderImg').src = 'founder.jpg';
+        // Set image sources when DOM is ready
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('logoImg').src = 'logo.png';
+            document.getElementById('heroImg').src = 'hero.jpg';
+            document.getElementById('founderImg').src = 'founder.jpg';
+        });
 
         function showPage(pageName) {
             const pages = document.querySelectorAll('.page');
